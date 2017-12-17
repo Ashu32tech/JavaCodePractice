@@ -1,0 +1,75 @@
+package cloneTest;
+
+public class CloneTest {
+	public static void main(String args[]) throws CloneNotSupportedException{
+		Address addr=new Address(1,"New ashok nagar");
+		Employee emp=new Employee(1,"Ashutosh",addr);
+		Employee emp1=(Employee) emp.clone();
+		System.out.println(emp1);
+		emp.getAddress().setAddressLine("Delhi");
+		System.out.println(emp1);
+		System.out.println(emp);
+		
+		
+	}
+
+}
+
+class Employee implements Cloneable{
+	int id;
+	String name;
+	Address address;
+	Employee(int id,String name,Address address){
+		this.id=id;
+		this.name=name;
+		this.address=address;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	public Object clone() throws CloneNotSupportedException{
+		return (Employee)super.clone();
+		
+	}
+	
+/*	public String toString(){
+		return this.id+this.name+this.address.id+this.address.addressLine;
+	}*/
+	
+}
+class Address{
+	int id;
+	String addressLine;
+	Address(int id,String addressLine){
+		this.id=id;
+		this.addressLine=addressLine;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getAddressLine() {
+		return addressLine;
+	}
+	public void setAddressLine(String addressLine) {
+		this.addressLine = addressLine;
+	}
+	
+}

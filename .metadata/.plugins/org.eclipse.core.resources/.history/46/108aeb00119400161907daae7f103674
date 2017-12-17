@@ -1,0 +1,34 @@
+package cloneTest;
+
+public class CloneTest {
+	public static void main(String args[]){
+		Address addr=new Address(1,"New ashok nagar");
+		Employee emp=new Employee(1,"Ashutosh",addr);
+	System.out.println(emp);
+	}
+
+}
+
+class Employee{
+	int id;
+	String name;
+	Address address;
+	Employee(int id,String name,Address address){
+		this.id=id;
+		this.name=name;
+		this.address=address;
+	}
+	public String toString(){
+		return this.id+this.name+this.address.id+this.address.addressLine;
+	}
+	
+}
+class Address{
+	int id;
+	String addressLine;
+	Address(int id,String addressLine){
+		this.id=id;
+		this.addressLine=addressLine;
+	}
+	
+}

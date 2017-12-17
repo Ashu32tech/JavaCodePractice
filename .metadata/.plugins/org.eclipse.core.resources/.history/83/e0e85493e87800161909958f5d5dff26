@@ -1,0 +1,36 @@
+package cocurrency;
+
+import java.util.concurrent.Callable;
+
+class SumIntegerCallable implements Callable<Integer>{
+
+	Integer n;
+	SumIntegerCallable(Integer n){
+		this.n=n;
+	}
+	
+	@Override
+	public Integer call() throws Exception {
+	int sum=0;
+		for(int i=0;i<=n;i++){
+			sum+=i;
+		}
+		// TODO Auto-generated method stub
+		return sum;
+	}
+}
+
+class SquareDoubleCallable implements Callable<Double>{
+
+	
+	@Override
+	public Double call() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}
+
+public class CallableFutureExample {
+
+}

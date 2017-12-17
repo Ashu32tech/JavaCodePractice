@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;proxy.Internet.java&apos; to &apos;ProxyDemo.java&apos;&#x0D;&#x0A;- Original project: &apos;DesignPattern&apos;&#x0D;&#x0A;- Original element: &apos;proxy.Internet.java&apos;&#x0D;&#x0A;- Renamed element: &apos;proxy.ProxyDemo.java&apos;" description="Rename compilation unit &apos;Internet.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;proxy{Internet.java" name="ProxyDemo.java" references="false" stamp="1474945010680" version="1.0"/>
+</session>

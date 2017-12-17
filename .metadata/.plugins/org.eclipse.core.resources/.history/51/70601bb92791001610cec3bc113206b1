@@ -1,0 +1,13 @@
+
+public class Switch_7 {
+		
+			public static void testSwith(int a){
+				switch(a){
+				case 1:
+				System.out.println("1");
+				
+				}
+				
+			}
+	
+}

@@ -1,0 +1,22 @@
+package designPattern;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class PrototypePatternTest {
+
+}
+class Employee implements Cloneable{
+	
+	List<Employee> empList;
+	Employee(){
+		this.empList=new ArrayList<Employee>();
+	}
+	
+	
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		return super.clone();
+	}
+} 

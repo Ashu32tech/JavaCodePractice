@@ -1,0 +1,18 @@
+package dataStructure;
+
+public class TestBubbleSort {
+public static void main(String args[]){
+	int arr[]={2,5,3,6,5};
+	BubbleSort bs=new BubbleSort();
+	bs.sortArr(arr);
+}
+	
+	
+}
+
+class BubbleSort{
+	public int [] sortArr(int [] arr){
+		System.out.println(arr);
+		return arr;
+	}
+}

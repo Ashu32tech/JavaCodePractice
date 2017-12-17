@@ -1,0 +1,23 @@
+
+public class Switch_7 {
+		
+			public static void testSwith(int a){
+				switch(a){
+				case 1:
+					System.out.println("1");
+					break;
+				case 2:
+					System.out.println("2");
+					break;
+				case 3:
+					System.out.println("3");
+					break;
+				}
+				
+				
+			}
+			public static void main(String args[]){
+				Switch_7.testSwith(5);
+			}
+	
+}

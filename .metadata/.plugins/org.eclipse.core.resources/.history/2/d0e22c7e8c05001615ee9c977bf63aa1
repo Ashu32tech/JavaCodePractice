@@ -1,0 +1,24 @@
+package designPattern;
+
+class TestFactory{
+	public static Currency createCurrency (String country){
+	if(country.equals("INR")){
+		new Rupee();
+		
+	}else if(country.equals("USD")){
+		new USDoller();
+		
+	}else if(country.equals("UKD")){
+		new UKDoller();
+		
+		}
+	 throw new IllegalArgumentException("No such currency");
+	
+	}
+}
+
+
+
+
+
+

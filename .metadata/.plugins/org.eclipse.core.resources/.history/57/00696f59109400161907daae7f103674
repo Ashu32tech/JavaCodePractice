@@ -1,0 +1,12 @@
+package cloneTest;
+
+public class CloneTest {
+
+}
+
+class Employee{
+	int id;
+	String name;
+	Address address;
+	
+}

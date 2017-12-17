@@ -1,0 +1,38 @@
+package objTest;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ProducerConsumerMain {
+	public static final int MAX_SIZE=3;	
+	public static void main(String args[]){
+List<Integer> shareQueue =new ArrayList<>();
+
+
+Thread task1=new Thread(new ProducerImpl());
+Thread task2=new Thread(new ConsumerImpl());
+
+	}
+
+
+
+}
+
+class ProducerImpl implements Runnable{
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}
+class ConsumerImpl implements Runnable{
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

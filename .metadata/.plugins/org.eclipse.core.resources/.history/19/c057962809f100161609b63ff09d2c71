@@ -1,0 +1,19 @@
+
+public class Test {
+	public static void main(String args[]){
+	int a[]={5,10,15,18};
+	for(int j:a){
+		if(j%3==0){
+			System.out.println("a");
+		}else if(j%5==0){
+			System.out.println("b");
+		}else if(j%3==0 && j%5==0){
+			System.out.println("a" +" and "+"b");
+			
+		}
+	}
+	
+	}
+	
+	
+}

@@ -1,0 +1,20 @@
+package cocurrency;
+
+class MyRunnable implements Runnable{
+	int taskNumber;
+	MyRunnable(int taskNumber){
+			this.taskNumber=taskNumber;
+	}
+	
+	
+	@Override
+	public void run() {
+		
+	}
+}
+
+
+
+public class ExecutorServiceExample {
+
+}

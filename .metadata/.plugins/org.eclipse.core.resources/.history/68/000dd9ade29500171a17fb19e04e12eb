@@ -1,0 +1,68 @@
+package thread;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+class SumIntegerCallable implements Callable{
+
+	 Integer n;
+	 
+	    SumIntegerCallable(Integer n) {
+	           this.n = n;
+	    }
+	    
+	@Override
+	public Object call() throws Exception {
+		Integer sum = 0;
+        for (int i = 0; i <= n; i++) {
+               sum += i;
+        }
+		return sum;
+	}
+	
+}
+class SquareDoubleCallable implements Callable{
+
+	 Double n;
+	 
+	    SquareDoubleCallable(Double n) {
+	           this.n = n;
+	    }
+	    
+	@Override
+	public Object call() throws Exception {
+		return n*n;
+	}
+	
+	
+}
+
+public class CallableFutureExample {
+
+	private static final int nThread=10;
+	
+	public static void main(String args[]){
+		ExecutorService exrc=Executors.newFixedThreadPool(nThread);
+		
+		
+		
+		
+		Future<Integer> futureInteger=exrc.submit(new SumIntegerCallable(5));
+		Future<Double> futureDouble=exrc.submit(new SquareDoubleCallable(7.7));
+		
+		
+		
+		  try {
+			System.out.println("SumIntegerCallable has returned > "+futureInteger.get());
+		    System.out.println("SquareDoubleCallable has returned > "+futureDouble.get());
+		} catch (InterruptedException | ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		exrc.shutdown();    		    
+	}
+	
+}

@@ -1,0 +1,21 @@
+package objTest;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ProducerConsumerMain {
+List<Integer> shareQueue =new ArrayList<>();
+public static final int MAX_SIZE=3;
+
+Thread task1=new Thread();
+Thread task2=new Thread();
+
+task1.start();
+task2.start();
+
+task1.join();
+task2.join();	
+	
+	
+	
+}

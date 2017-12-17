@@ -1,0 +1,32 @@
+package testException;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+class MyException extends RuntimeException{
+	MyException(String s){
+	super(s);
+}
+}
+
+public class TestException {
+	public static void main(String args[]) {
+		
+		TestException t=new TestException();
+		try {
+			t.fileTest();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+			throw new MyException("test");
+		
+	}
+	public void fileTest() throws FileNotFoundException{
+		File f=new File("abcd");
+		FileInputStream fin=new FileInputStream(f);
+	}
+	
+}

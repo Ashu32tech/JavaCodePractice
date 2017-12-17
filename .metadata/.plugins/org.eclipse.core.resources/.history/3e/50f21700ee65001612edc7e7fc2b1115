@@ -1,0 +1,27 @@
+package algo;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class TestString {
+
+	Map<String,Integer> findDuplicateWord(String comment){
+		Map<String,Integer> mp=new HashMap<>();
+		String strTemp[]=comment.split(" ");
+		
+		for(String word:strTemp){
+			Integer wordCnt=mp.get(word);
+			if(wordCnt==null){
+				wordCnt=0;
+			}
+			mp.put(word, wordCnt+1);			
+		}
+		return mp;
+	}
+	
+	public static void main(){
+		
+	}
+	
+	
+}

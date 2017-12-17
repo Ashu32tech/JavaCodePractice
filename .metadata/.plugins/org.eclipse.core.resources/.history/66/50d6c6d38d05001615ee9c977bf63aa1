@@ -1,0 +1,30 @@
+package designPattern;
+
+class CurrencyFactory {
+	public static Currency createCurrency (String country){
+		System.out.println(country);
+	if(country.equals("INR")){
+		return new Rupee();
+		
+	}else if(country.equals("USD")){
+		return new USDoller();
+		
+	}else if(country.equals("UKD")){
+		return new UKDoller();
+		
+		}
+	throw new IllegalArgumentException("No such currency");
+	}
+}
+public class TestFactory{
+	public static void main(String args[]){
+		String country="INR";
+		Currency curr=CurrencyFactory.createCurrency(country);
+		System.out.println(curr.getSymbol());
+	}
+}
+
+
+
+
+

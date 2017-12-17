@@ -1,0 +1,13 @@
+import java.io.FileInputStream;
+
+public class Exception_7 {
+
+	public static void main(String args[]){
+	
+		FileInputStream  fis=new FileInputStream("D:/abc.txt");
+		
+		
+	}
+	
+	
+}

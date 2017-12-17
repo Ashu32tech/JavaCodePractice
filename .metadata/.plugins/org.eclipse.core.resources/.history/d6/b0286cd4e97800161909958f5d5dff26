@@ -1,0 +1,59 @@
+package cocurrency;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+class SumIntegerCallable implements Callable<Integer>{
+
+	Integer n;
+	SumIntegerCallable(Integer n){
+		this.n=n;
+	}
+	
+	@Override
+	public Integer call() throws Exception {
+	int sum=0;
+		for(int i=0;i<=n;i++){
+			sum+=i;
+		}
+		// TODO Auto-generated method stub
+		return sum;
+	}
+}
+
+class SquareDoubleCallable implements Callable<Double>{
+	Double n;
+	
+	SquareDoubleCallable(Double n){
+		this.n=n;
+	}
+	
+	@Override
+	public Double call() throws Exception {
+		// TODO Auto-generated method stub
+		return n*n;
+	}
+}
+
+public class CallableFutureExample {
+			private static int nThread=10;
+	
+			public static void main(String args[]){
+			ExecutorService executor=Executors.newFixedThreadPool(nThread);
+			
+			SumIntegerCallable sumIntegerCallabl=new SumIntegerCallable(10);
+			SquareDoubleCallable squareDoubleCallable=new SquareDoubleCallable(5.5);
+			
+			Future<Integer> f1=executor.submit(sumIntegerCallabl);
+			Future<Double> f2=executor.submit(squareDoubleCallable);
+			
+			System.out.println(f1.get());
+			System.out.println(f2.get());
+			
+			
+			
+			}
+			
+}

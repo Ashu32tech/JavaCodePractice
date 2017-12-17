@@ -1,0 +1,92 @@
+package string;
+
+/*public class ReversString {
+	
+		public static void main(String args[]){
+		String ts="ASHUTOSH";
+		String testStr2="I AM ASHUTOSH";	
+		
+		System.out.println(paliondrom("redivider"));
+		
+		System.out.println(ts.substring(0,4));
+		}
+		   public static String reverse(String source){
+		        if(source == null || source.isEmpty()){
+		            return source;
+		        }       
+		        String reverse = "";
+		        for(int i = source.length() -1; i>=0; i--){
+		            reverse = reverse + source.charAt(i);
+		        }
+		      
+		        return reverse;
+		    }
+		   
+		   public static boolean paliondrom(String s){
+			   int length=s.length();
+			   for(int i=0;i<length/2;i++){
+				   if(s.charAt(i)!=s.charAt(length-i-1)){
+					   return false;
+				   }
+			   }
+			   return true;
+		   }
+		   
+}*/
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ * Java Program to find all permutations of a String
+ * @author pankaj
+ *
+ */
+public class ReversString {
+    public static Set<String> permutationFinder(String str) {
+    	System.out.println("again");
+    	
+    	Set<String> perm = new HashSet<String>();
+        //Handling error scenarios
+        if (str == null) {
+        	System.out.println(str);
+            return null;
+        } else if (str.length() == 0) {
+        	System.out.println(str);
+            perm.add("");
+            return perm;
+        }
+        char initial = str.charAt(0); // first character
+        String rem = str.substring(1); // Full string without first character
+        System.out.println(initial); 
+        System.out.println(rem);
+        
+        Set<String> words = permutationFinder(rem);
+        
+        
+        
+        System.out.println(words);
+        
+        for (String strNew : words) {
+        	System.out.println("In");
+            for (int i = 0;i<=strNew.length();i++){
+                perm.add(charInsert(strNew, initial, i));
+            }
+        }
+        return perm;
+    }
+
+    public static String charInsert(String str, char c, int j) {
+        String begin = str.substring(0, j);
+        String end = str.substring(j);
+        return begin + c + end;
+    }
+
+    public static void main(String[] args) {
+        String s = "AAC";
+        String s1 = "ABC";
+        String s2 = "ABCD";
+        //System.out.println("\nPermutations for " + s + " are: \n" + permutationFinder(s));
+        System.out.println("\nPermutations for " + s1 + " are: \n" + permutationFinder(s1));
+        //System.out.println("\nPermutations for " + s2 + " are: \n" + permutationFinder(s2));
+    }
+}
